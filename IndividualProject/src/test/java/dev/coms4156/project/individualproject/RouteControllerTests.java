@@ -3,10 +3,7 @@ package dev.coms4156.project.individualproject;
 import static org.hamcrest.Matchers.containsString;
 import static org.mockito.Mockito.when;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.HashMap;
+import java.util.Map;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +19,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
  */
 @WebMvcTest(RouteController.class)
 public class RouteControllerTests {
-  public static HashMap<String, Department> departmentMapping;
+  public static Map<String, Department> departmentMapping;
 
   @Autowired
   private MockMvc mockMvc;

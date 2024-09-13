@@ -2,10 +2,7 @@ package dev.coms4156.project.individualproject;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.HashMap;
+import java.util.Map;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,7 +20,7 @@ public class DepartmentTests {
   @BeforeAll
   public static void setupCourseForTesting() {
     MyFileDatabase db = new MyFileDatabase(0, "./src/test/resources/data.txt");
-    HashMap<String, Department> departmentMapping = db.getDepartmentMapping();
+    Map<String, Department> departmentMapping = db.getDepartmentMapping();
     testDepartment = departmentMapping.get("COMS");
     testDepartment2 = departmentMapping.get("ECON");
   }
