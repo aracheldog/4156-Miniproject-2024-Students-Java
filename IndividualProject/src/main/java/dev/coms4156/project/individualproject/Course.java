@@ -54,14 +54,29 @@ public class Course implements Serializable {
     return true;
   }
 
+  /**
+   * a getter to get the course location.
+   *
+   * @return location of the courses
+   */
   public String getCourseLocation() {
     return this.courseLocation;
   }
 
+  /**
+   * a getter to get the course's instructor.
+   *
+   * @return instructor of the courses
+   */
   public String getInstructorName() {
     return this.instructorName;
   }
 
+  /**
+   * a getter to get the course time slot.
+   *
+   * @return time slot of the courses
+   */
   public String getCourseTimeSlot() {
     return this.courseTimeSlot;
   }
