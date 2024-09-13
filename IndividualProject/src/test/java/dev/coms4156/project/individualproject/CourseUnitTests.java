@@ -25,6 +25,42 @@ public class CourseUnitTests {
     assertEquals(expectedResult, testCourse.toString());
   }
 
+  @Test
+  public void courseFullTest() {
+    testCourse.setEnrolledStudentCount(250);
+    assertEquals(true, testCourse.isCourseFull());
+  }
+
+  @Test
+  public void courseNotFullTest() {
+    testCourse.setEnrolledStudentCount(120);
+    assertEquals(false, testCourse.isCourseFull());
+  }
+
+  @Test
+  public void enrollmentTest() {
+    testCourse.setEnrolledStudentCount(0);
+    assertEquals(true, testCourse.enrollStudent());
+  }
+
+  @Test
+  public void enrollmentTestFalse() {
+    testCourse.setEnrolledStudentCount(500);
+    assertEquals(false, testCourse.enrollStudent());
+  }
+
+  @Test
+  public void dropStudentTest() {
+    testCourse.setEnrolledStudentCount(100);
+    assertEquals(true, testCourse.dropStudent());
+  }
+
+  @Test
+  public void dropStudentFailedTest() {
+    testCourse.setEnrolledStudentCount(0);
+    assertEquals(false, testCourse.dropStudent());
+  }
+
   /** The test course instance used for testing. */
   public static Course testCourse;
 }
