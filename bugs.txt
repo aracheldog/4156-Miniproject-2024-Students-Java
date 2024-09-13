@@ -1,0 +1,33 @@
+- Course.java
+    1) enrolledStudentCount: it makes more sense to initialize this to 0-when create a course instance.
+    2) enrollStudent() function doesn't check if the course is full, and the return should be true, if the student successfully enrolled into the class.
+    3) dropStudent(): should check if there are still students in the class before performing the - operation.
+    4) getCourseLocation() and getInstructorName(): these two getter functions have wrong return value.
+    5) isCourseFull(): if enrollmentCapacity less or equal than the enrolledStudentCount, which means course is full
+    6) toString(): missing override decorator
+    
+- Department.java
+    1) getNumberOfMajors(): shouldn't have a minus sign in the return result
+    2) getDepartmentChair(): should return this.departmentChair, instead of a String
+    3) dropPersonFromMajor(): should add greater than 0 check
+    4) toString(): should return result.toString(), instead of a String
+    5) toString(): missing override decorator
+    6) from pmd: LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead, change to map
+
+- IndividualProjectApplication.java
+    1) from pmd: LiteralsFirstInComparisons: Position literals first in String comparisons, change to "setup".equals(arg)
+    2) from pmd: LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead change to map
+
+- MyFileDatabase.java
+    1) from pmd: LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead, change to map
+    2) from pmd: ReturnEmptyCollectionRatherThanNull:	Return an empty collection rather than null, change to Collections.emptyMap()
+
+- RouteController.java
+    1) retrieveDepartment(): the status code were reversed, should return ok if found, otherwise, should return not_found, change them back
+    2) retrieveCourse(): status code should be ok, instead of forbidden
+    3) getMajorCtFromDept(): when department is not found, the status code should be not_found instead of forbidden, also  departmentMapping.get(deptCode) should't have the minus sign in the front.
+    4) findCourseTime(): the course time should be requestedCourse.getCourseTimeSlot()
+    5) handleException(): should return status code badRequest instead of ok
+    6) from pmd: LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+    7) from pmd: seLocaleWithCaseConversions:	When doing a String.toLowerCase()/toUpperCase() call, use a Locale, change to ```if (!departmentMapping.containsKey(deptCode.toUpperCase(Locale.ENGLISH)))```
+    8) from pmd: UnnecessaryAnnotationValueElement:	Avoid the use of value in annotations when its the only element, change to ```@RequestParam("deptCode") String deptCode```
