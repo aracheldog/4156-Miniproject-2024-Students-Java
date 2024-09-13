@@ -1,0 +1,2 @@
+mockito: https://site.mockito.org/
+pmd: https://docs.pmd-code.org/pmd-doc-7.5.0/pmd_userdocs_cli_reference.html#available-report-formats
